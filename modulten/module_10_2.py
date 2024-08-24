@@ -7,21 +7,21 @@ class Knight(Thread):
         super().__init__()
         self.name = name
         self.power = power
-        self.dnei = 0
+        self.day = 0
         self.num_vragov = 100
 
     def battle_start(self):
         print(f'{self.name}, на нас напали!')
 
     def battle_end(self):
-        print(f'{self.name} одержал победу спустя {self.dnei} дней(дня)!')
+        print(f'{self.name} одержал победу спустя {self.day} дней(дня)!')
 
     def run(self):
         self.battle_start()
         while self.num_vragov > 0:
-            print(f'{self.name}, сражается {self.dnei} день(дня), осталось {self.num_vragov} воинов.')
+            print(f'{self.name}, сражается {self.day} день(дня), осталось {self.num_vragov} воинов.')
             self.num_vragov -= self.power
-            self.dnei += 1
+            self.day += 1
             sleep(1)
         self.battle_end()
 
